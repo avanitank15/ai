@@ -1,0 +1,12 @@
+{
+  "ORD-999": {
+    "status": "Shipped",
+    "items": ["Bamboo Toothbrush Set"],
+    "delivery_date": "2023-10-25"
+  },
+  "ORD-888": {
+    "status": "Processing",
+    "items": ["Recycled Denim Jacket"],
+    "delivery_date": "TBD"
+  }
+}

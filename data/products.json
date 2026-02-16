@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "name": "Bamboo Toothbrush Set",
+    "price": 12.99,
+    "category": "personal_care",
+    "eco_friendly": true,
+    "eco_score": "High",
+    "description": "100% biodegradable bamboo handles."
+  },
+  {
+    "id": 102,
+    "name": "Standard Plastic Comb",
+    "price": 5.99,
+    "category": "personal_care",
+    "eco_friendly": false,
+    "eco_score": "Low",
+    "description": "Durable plastic comb."
+  },
+  {
+    "id": 103,
+    "name": "Recycled Denim Jacket",
+    "price": 85.00,
+    "category": "clothing",
+    "eco_friendly": true,
+    "eco_score": "Medium",
+    "description": "Made from 50% post-consumer recycled cotton."
+  },
+  {
+    "id": 104,
+    "name": "Fast Fashion T-Shirt",
+    "price": 10.00,
+    "category": "clothing",
+    "eco_friendly": false,
+    "eco_score": "Low",
+    "description": "Standard cotton blend."
+  }
+]

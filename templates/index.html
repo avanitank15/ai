@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Commerce Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>🌱 EcoShop Assistant</h2>
+            <p>Type "Eco Mode" to toggle sustainability.</p>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="bot-message">Hello! I can help you find products or track orders. Try asking for "Bamboo" or "Track ORD-999".</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let userId = localStorage.getItem("chat_user_id");
+
+        async function sendMessage() {
+            const inputField = document.getElementById("user-input");
+            const message = inputField.value;
+            if (!message) return;
+
+            addMessage(message, "user-message");
+            inputField.value = "";
+
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message, user_id: userId })
+            });
+
+            const data = await response.json();
+            
+            // Save user ID to keep session (Eco mode state) active
+            if (!userId) {
+                userId = data.user_id;
+                localStorage.setItem("chat_user_id", userId);
+            }
+
+            addMessage(data.response, "bot-message");
+        }
+
+        function addMessage(text, className) {
+            const chatBox = document.getElementById("chat-box");
+            const div = document.createElement("div");
+            div.className = className;
+            // Allow basic markdown bolding
+            div.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Allow "Enter" key to send
+        document.getElementById("user-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>

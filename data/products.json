@@ -2,7 +2,7 @@
   {
     "id": 101,
     "name": "Bamboo Toothbrush Set",
-    "price": 12.99,
+    "price": 499,
     "category": "personal_care",
     "eco_friendly": true,
     "eco_score": "High",
@@ -11,7 +11,7 @@
   {
     "id": 102,
     "name": "Standard Plastic Comb",
-    "price": 5.99,
+    "price": 99,
     "category": "personal_care",
     "eco_friendly": false,
     "eco_score": "Low",
@@ -20,7 +20,7 @@
   {
     "id": 103,
     "name": "Recycled Denim Jacket",
-    "price": 85.00,
+    "price": 850,
     "category": "clothing",
     "eco_friendly": true,
     "eco_score": "Medium",
@@ -29,7 +29,7 @@
   {
     "id": 104,
     "name": "Fast Fashion T-Shirt",
-    "price": 10.00,
+    "price": 250,
     "category": "clothing",
     "eco_friendly": false,
     "eco_score": "Low",

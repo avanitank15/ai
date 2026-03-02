@@ -43,7 +43,7 @@ class EcoBot:
         response = "Here is what I found:\n"
         for p in results:
             icon = "🌱" if p['eco_friendly'] else ""
-            response += f"- {icon} **{p['name']}** (${p['price']}) - {p['description']}\n"
+            response += f"- {icon} **{p['name']}** ({p['price']}Rs.) - {p['description']}\n"
         return response
 
     def track_order(self, order_id):
